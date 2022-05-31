@@ -35,7 +35,7 @@ internal class ChildWidgetMachine<Input, Output>
     override val dispatcher: CoroutineDispatcher
         get() = Dispatchers.Main
 
-    override suspend fun process(input: Input?, callback: Handler<Output>) {
+    override fun process(input: Input?, callback: Handler<Output>) {
         privateInputSetter?.invoke(input)
         privateOutputCallback = callback
     }
